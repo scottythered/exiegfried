@@ -12,6 +12,3 @@
 Make sure Pandas is installed. Everything else is standard.
 
 Also, you should have ExifTool and Siegfried installed and on your local PATH; if not, at least have them in the same directory as exiegfried.
-
-## Limitations
-exiegfried was written for a group of Windows users, so you'll have to do some minor file-path editing to use it on a Unix-based system.

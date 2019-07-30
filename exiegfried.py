@@ -29,19 +29,19 @@ def processor(w, x, y, z):
     else:
         print("Your folder type isn't recognized. Shutting down.")
         sys.exit()
-    extended_path = w + '\\' + x
+    extended_path = os.path.join(w, x)
     for folder in os.listdir(extended_path):
         if folder.startswith(y):
             ident = (folder.split("_")[1])[:-3]
             ident_number = folder.split("_")[2]
-            new_folder = "{0}\\{1}_{2}aip_{3}_{4}".format(
-                extended_path, folder_number, ident, ident_number, folder_type
-            )
+            new_folder = os.path.join(
+                extended_path,
+                "{0}_{1}aip_{2}_{3}".format(folder_number, ident, ident_number, folder_type))
             os.mkdir(new_folder)
             print("\n\nFolder created at: {0}\n\n".format(new_folder))
-            folder_to_be_checked = "{0}\\{1}".format(extended_path, folder)
-            exif_doc = "{0}\\{1}-exiftool.csv".format(new_folder, z)
-            sigf_doc = "{0}\\{1}-fileformats.csv".format(new_folder, z)
+            folder_to_be_checked = os.path.join(extended_path, folder)
+            exif_doc = os.path.join(new_folder, "{0}-exiftool.csv".format(z))
+            sigf_doc = os.path.join(new_folder, "{0}-fileformats.csv".format(z))
             try:
                 raw_exif = sb.check_output(
                     ["exiftool", "-j", "-r", folder_to_be_checked]
