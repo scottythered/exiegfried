@@ -8,7 +8,12 @@
 3. CSV outputs from these two tools are saved in new folders: "original_fixty-content" and "processed_fixty-content."
 4. ARCHIVAL PROFIT!
 
-## Requirements
-Make sure Pandas is installed. Everything else is standard.
+## NEW!
+Two versions of exiegfried are now available: a standalone command-line script (*/script_version/*) and a GUI version built using the Gooey library (*/gui_version/*).
 
-Also, you should have ExifTool and Siegfried installed and on your local PATH; if not, at least have them in the same directory as exiegfried.
+## Requirements
+If you're running the standalone command-line script, make sure Pandas is installed; everything else is standard.
+
+If you're running the GUI version, install the reqs provided in the GUI directory: ```pip install -r requirements.txt ```
+
+In either case, you should have ExifTool and Siegfried installed and on your local PATH; if not, at least have them in the same directory as your exiegfried version.
